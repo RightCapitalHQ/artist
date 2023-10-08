@@ -63,8 +63,4 @@ export class ImageSourceUrlHelpers {
       `Unsupported source image provider URL: ${sourceUrl}`,
     );
   }
-
-  private static arrayBufferToBuffer(arrayBufferData: ArrayBuffer): Buffer {
-    return Buffer.from(arrayBufferData);
-  }
 }
