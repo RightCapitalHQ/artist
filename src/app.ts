@@ -1,5 +1,10 @@
 import { App } from '@slack/bolt';
-import { ChatPostMessageResponse, WebClient } from '@slack/web-api';
+import {
+  ChatPostMessageResponse,
+  WebClient,
+  WebAPIPlatformError,
+  ErrorCode,
+} from '@slack/web-api';
 import { PromptParserHelpers } from './helpers/prompt-parser.helpers';
 import { SlackHelpers } from './helpers/slack.helpers';
 import { OpenAIService } from './service/openai.service';
@@ -36,7 +41,7 @@ app.command('/imagine', async ({ command, ack, say, client }) => {
   const prompt = command.text;
 
   const message = await say({
-    text: 'The elegant image generating :wink:',
+    text: 'Your image is being created by AI :wink:',
     channel: command.channel_id,
   });
 
@@ -67,7 +72,7 @@ app.event('app_mention', async ({ event, context, client, say }) => {
   );
 
   const reply = await say({
-    text: 'The elegant image generating :wink:',
+    text: 'Your image is being created by AI :wink:',
     thread_ts: event.ts,
   });
 
@@ -112,10 +117,19 @@ async function generateReplyMessageByPrompt(
     }
   } catch (exception) {
     if (message.channel && message.ts) {
+      let errorMessage = 'Oh no! failed to generate image by DALL·E 2';
+      if (
+        (exception as WebAPIPlatformError).code === ErrorCode.PlatformError &&
+        (exception as WebAPIPlatformError).data.error === 'not_in_channel'
+      ) {
+        errorMessage = `The image was generated successfully, but it cannot be uploaded to private channel, you need to \`\\invite <@${
+          message.message?.user || ''
+        }>\` to current channel first`;
+      }
       await client.chat.update({
         channel: message.channel,
         ts: message.ts,
-        text: 'Oh no! failed to generate image by DALL·E 2',
+        text: errorMessage,
       });
     }
   }
