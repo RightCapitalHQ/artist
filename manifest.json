@@ -1,0 +1,37 @@
+{
+  "display_information": {
+    "name": "Artist Chatbot",
+    "description": "The Artist is a Slack chatbot with ability to draw fantastic AI image",
+    "background_color": "#5070e6"
+  },
+  "settings": {
+    "socket_mode_enabled": true,
+    "event_subscriptions": {
+      "bot_events": ["app_mention"]
+    }
+  },
+  "features": {
+    "bot_user": {
+      "display_name": "Artist"
+    },
+    "slash_commands": [
+      {
+        "command": "/imagine",
+        "description": "Create images with Artist Chatbot",
+        "usage_hint": "prompt"
+      }
+    ]
+  },
+  "oauth_config": {
+    "scopes": {
+      "bot": [
+        "app_mentions:read",
+        "commands",
+        "chat:write",
+        "chat:write.public",
+        "files:read",
+        "files:write"
+      ]
+    }
+  }
+}
