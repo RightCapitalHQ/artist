@@ -1,0 +1,45 @@
+{
+  "name": "Artist Chatbot",
+  "description": "The Artist is a Slack chatbot with ability to draw fantastic AI image",
+  "keywords": [
+    "Artist",
+    "Image Generation",
+    "Slack bot",
+    "Slack",
+    "Dall-E",
+    "AI",
+    "AIGC"
+  ],
+  "website": "https://github.com/RightCapitalHQ/artist",
+  "repository": "https://github.com/RightCapitalHQ/artist",
+  "scripts": {
+    "postdeploy": "pnpm run start"
+  },
+  "env": {
+    "OPENAI_API_KEY": {
+      "description": "Your OpenAI API key",
+      "required": true
+    },
+    "SLACK_APP_TOKEN": {
+      "description": " Slack App token. it usually starts with `xapp-`",
+      "required": true
+    },
+    "SLACK_BOT_TOKEN": {
+      "description": "Slack Bot OAuth token,it usually starts with `xoxb-`",
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "standard-1x"
+    }
+  },
+  "image": "heroku/ruby",
+  "addons": [],
+  "buildpacks": [
+    {
+      "url": "https://github.com/TheSecurityDev/heroku-buildpack-nodejs-pnpm"
+    }
+  ]
+}
