@@ -30,9 +30,9 @@
     }
   },
   "formation": {
-    "web": {
+    "worker": {
       "quantity": 1,
-      "size": "standard-1x"
+      "size": "eco"
     }
   },
   "image": "heroku/ruby",

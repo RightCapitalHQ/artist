@@ -67,6 +67,8 @@ Before you start the deployment, Please ensure you have the following items read
 
 If you would like to deploy it on Heroku, please refer to [this documentation](https://slack.dev/bolt-js/deployments/heroku) for more detailed information.
 
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/RightCapitalHQ/artist)
+
 ## Usage
 
 ### Slash command
