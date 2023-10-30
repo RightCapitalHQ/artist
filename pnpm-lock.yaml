@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@rightcapital/exceptions':
-    specifier: 1.2.3
-    version: 1.2.3
+    specifier: 1.2.5
+    version: 1.2.5
   '@slack/bolt':
     specifier: 3.14.0
     version: 3.14.0
@@ -1933,8 +1933,8 @@ packages:
       - supports-color
     dev: true
 
-  /@rightcapital/exceptions@1.2.3:
-    resolution: {integrity: sha512-/Jp+Wjlf2OEvJ0al85kkM04WbWtmY8QYeYt0OUuoP40sRKYGqNJIo3klN060zlNBiJ7S1GI0UQKcrrKByybbPA==}
+  /@rightcapital/exceptions@1.2.5:
+    resolution: {integrity: sha512-cYO1aigQJGhGLdTGOqoWgd3eTZ+91Z1pouBGbLqNVKdxB5FKQiKdD2kT/Be3CoqFRMVUWnRL+PaxQ78v3VfWeQ==}
     dev: false
 
   /@rightcapital/prettier-config@6.0.2(prettier@3.0.3):
