@@ -1,0 +1,7 @@
+{
+  "type": "minor",
+  "comment": "feat: add DALL-E 3 API support on generating image",
+  "packageName": "@rightcapital/artist",
+  "email": "i@rainx.cc",
+  "dependentChangeType": "patch"
+}

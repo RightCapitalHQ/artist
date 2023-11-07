@@ -67,6 +67,16 @@ export class OpenAIService {
       ),
     );
 
+    // Default model is set to DALL-E 3
+    let dalleModel: string = 'dall-e-3';
+
+    // Fallback to DALL-E 2 only when the parameters we provided are not supported by 3
+    if (
+      parsedPromptParts.options.count > 1 ||
+      ['256x256', '512x512'].includes(parsedPromptParts.options.size)
+    ) {
+      dalleModel = 'dall-e-2';
+    }
     return retry(
       async (_bait) => {
         let response;
@@ -89,6 +99,7 @@ export class OpenAIService {
           });
         } else {
           response = await openai.images.generate({
+            model: dalleModel,
             prompt: parsedPromptParts.textPrompt,
             n: parsedPromptParts.options.count,
             size: parsedPromptParts.options.size,
@@ -124,9 +135,9 @@ export class OpenAIService {
       // GPT 3.5's system prompt doesn't work very well.
       chatMessages[
         chatMessages.length - 1
-      ].content = `${OPENAI_ARTIST_CHAT_SYSTEM_PROMPT}The following is the user message: ${
-        chatMessages[chatMessages.length - 1].content
-      }`;
+      ].content = `${OPENAI_ARTIST_CHAT_SYSTEM_PROMPT}The following is the user message: ${chatMessages[
+        chatMessages.length - 1
+      ].content?.toString()}`;
     } else {
       chatMessages.unshift({
         role: 'system',

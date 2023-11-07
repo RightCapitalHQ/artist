@@ -25,7 +25,7 @@ const defaultParsedPromptParts: IParsedPromptParts = {
   textPrompt: '',
   urls: [],
   options: {
-    size: '512x512' as '256x256' | '512x512' | '1024x1024',
+    size: '1024x1024' as IParsedPromptParts['options']['size'],
     count: 1,
   },
   flags: {
@@ -87,11 +87,17 @@ export class PromptParserHelpers {
           }
           if (SIZE_OPTIONS.includes(currentPart)) {
             // Only 3 sizes are valid
-            if (['512x512', '1024x1024', '256x256'].includes(nextPart)) {
-              parsedPromptParts.options.size = nextPart as
-                | '256x256'
-                | '512x512'
-                | '1024x1024';
+            if (
+              [
+                '512x512',
+                '1024x1024',
+                '256x256',
+                '1792x1024',
+                '1024x1792',
+              ].includes(nextPart)
+            ) {
+              parsedPromptParts.options.size =
+                nextPart as IParsedPromptParts['options']['size'];
             }
             // eslint-disable-next-line no-plusplus
             currentIndex++;
