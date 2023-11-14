@@ -133,11 +133,10 @@ export class OpenAIService {
 
     if (OPENAI_CHAT_MODEL.startsWith('gpt-3.5-turbo')) {
       // GPT 3.5's system prompt doesn't work very well.
-      chatMessages[
-        chatMessages.length - 1
-      ].content = `${OPENAI_ARTIST_CHAT_SYSTEM_PROMPT}The following is the user message: ${chatMessages[
-        chatMessages.length - 1
-      ].content?.toString()}`;
+      chatMessages[chatMessages.length - 1].content =
+        `${OPENAI_ARTIST_CHAT_SYSTEM_PROMPT}The following is the user message: ${chatMessages[
+          chatMessages.length - 1
+        ].content?.toString()}`;
     } else {
       chatMessages.unshift({
         role: 'system',
