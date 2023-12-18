@@ -1,6 +1,6 @@
 import https from 'https';
 import { FilesUploadResponse, WebClient } from '@slack/web-api';
-import type { Message as ReplyMessage } from '@slack/web-api/dist/response/ConversationsRepliesResponse';
+import type { MessageElement as ReplyMessage } from '@slack/web-api/dist/response/ConversationsRepliesResponse';
 import { snakeCase } from 'lodash';
 
 export type Message = ReplyMessage & { channel: string };
