@@ -1,0 +1,7 @@
+{
+  "type": "patch",
+  "comment": "fix(deps): update dependency @slack/web-api to v7",
+  "packageName": "@rightcapital/artist",
+  "email": "email not defined",
+  "dependentChangeType": "patch"
+}
