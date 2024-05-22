@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@rightcapital/exceptions':
-        specifier: 1.2.6
-        version: 1.2.6
+        specifier: 1.2.20
+        version: 1.2.20
       '@slack/bolt':
         specifier: 3.14.0
         version: 3.14.0
@@ -990,8 +990,8 @@ packages:
       eslint: ^8.23.1
       typescript: ^5.0.0
 
-  '@rightcapital/exceptions@1.2.6':
-    resolution: {integrity: sha512-ZZXfQurouKnuk4sZSOqMfRjo81Y/L3vT9ocrhJBakNLip+ZT64mpAMQEabB6eYNTKcomumQSgE49eMm2WJjGkA==}
+  '@rightcapital/exceptions@1.2.20':
+    resolution: {integrity: sha512-l9+IlW2D3sfdp9kW1nKRGtXWnIiyio0CDCyHHNnKkKr1Jeor0L+WbmjZcvCT/kYFbr8mkynp5x11HgaBWcfogQ==}
 
   '@rightcapital/prettier-config@6.0.8':
     resolution: {integrity: sha512-cd1MFSK3ZhIc+qYYM3nlWO52WMo50Ufhcry9ZH7NePQWe3TxLoMo69TQPNZhatkYbGm3jLF6eHWjHh3vvnUfGg==}
@@ -5025,7 +5025,7 @@ snapshots:
       - eslint-import-resolver-webpack
       - supports-color
 
-  '@rightcapital/exceptions@1.2.6': {}
+  '@rightcapital/exceptions@1.2.20': {}
 
   '@rightcapital/prettier-config@6.0.8(prettier@3.1.1)':
     dependencies:
