@@ -1,0 +1,7 @@
+{
+  "type": "minor",
+  "comment": "chore: assign file type to png when uploading DALL-E generated image",
+  "packageName": "@rightcapital/artist",
+  "email": "i@rainx.cc",
+  "dependentChangeType": "patch"
+}
