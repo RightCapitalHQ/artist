@@ -34,6 +34,7 @@ export class SlackHelpers {
             // Include your filename in a ReadStream here
             file: incomingMessage,
             filename: `${snakeCase(prompt)}.png`,
+            filetype: 'png',
             title: prompt,
             thread_ts: threadTs,
           });
