@@ -1,0 +1,7 @@
+{
+  "type": "patch",
+  "comment": "fix(deps): update dependency @rightcapital/exceptions to v1.2.21",
+  "packageName": "@rightcapital/artist",
+  "email": "email not defined",
+  "dependentChangeType": "patch"
+}
