@@ -1,0 +1,7 @@
+{
+  "type": "patch",
+  "comment": "chore(deps): update node:20.10.0 docker digest to 8d0f16f",
+  "packageName": "@rightcapital/artist",
+  "email": "email not defined",
+  "dependentChangeType": "patch"
+}
