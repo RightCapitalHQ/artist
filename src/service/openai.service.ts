@@ -1,8 +1,9 @@
 import { UnexpectedValueException } from '@rightcapital/exceptions';
 import retry from 'async-retry';
 import OpenAI from 'openai';
+
 import { ImageSourceUrlHelpers } from '../helpers/image-source-url.helpers';
-import { IParsedPromptParts } from '../helpers/prompt-parser.helpers';
+import type { IParsedPromptParts } from '../helpers/prompt-parser.helpers';
 import type { Message } from '../helpers/slack.helpers';
 
 const OPENAI_CHAT_MODEL = process.env.OPENAI_CHAT_MODEL || 'gpt-3.5-turbo';

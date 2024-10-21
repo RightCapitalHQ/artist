@@ -1,10 +1,11 @@
 import { App } from '@slack/bolt';
 import {
-  ChatPostMessageResponse,
-  WebClient,
-  WebAPIPlatformError,
+  type ChatPostMessageResponse,
   ErrorCode,
+  type WebAPIPlatformError,
+  type WebClient,
 } from '@slack/web-api';
+
 import { PromptParserHelpers } from './helpers/prompt-parser.helpers';
 import { SlackHelpers } from './helpers/slack.helpers';
 import { OpenAIService } from './service/openai.service';
@@ -98,7 +99,7 @@ async function generateReplyMessageByPrompt(
     const generatedImageUrls =
       await OpenAIService.instance.createNewImageByPrompt(parsedPromptParts);
     for await (const generatedImageUrl of generatedImageUrls) {
-      if (generatedImageUrl)
+      if (generatedImageUrl) {
         await SlackHelpers.uploadImageToSlackFileServer(
           client,
           channelId,
@@ -106,6 +107,7 @@ async function generateReplyMessageByPrompt(
           generatedImageUrl,
           prompt,
         );
+      }
     }
 
     if (message.channel && message.ts) {

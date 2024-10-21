@@ -1,4 +1,5 @@
 import { cloneDeep } from 'lodash';
+
 import { ImageSourceUrlHelpers } from './image-source-url.helpers';
 
 export interface IParsedPromptParts {
@@ -127,7 +128,7 @@ export class PromptParserHelpers {
 
     try {
       url = new URL(possibleUrl);
-    } catch (_) {
+    } catch {
       return false;
     }
 
