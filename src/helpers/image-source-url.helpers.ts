@@ -1,5 +1,6 @@
-import { File } from 'buffer';
-import { BinaryLike } from 'node:crypto';
+import { File } from 'node:buffer';
+import type { BinaryLike } from 'node:crypto';
+
 import { InvalidArgumentException } from '@rightcapital/exceptions';
 
 export class ImageSourceUrlHelpers {
@@ -8,7 +9,7 @@ export class ImageSourceUrlHelpers {
 
     try {
       url = new URL(possibleUrl);
-    } catch (_) {
+    } catch {
       return false;
     }
     return url.hostname === 'pasteboard.co';

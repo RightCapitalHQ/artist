@@ -1,5 +1,6 @@
-import https from 'https';
-import { FilesUploadResponse, WebClient } from '@slack/web-api';
+import https from 'node:https';
+
+import type { FilesUploadResponse, WebClient } from '@slack/web-api';
 import type { Message as ReplyMessage } from '@slack/web-api/dist/response/ConversationsRepliesResponse';
 import { snakeCase } from 'lodash';
 
@@ -41,6 +42,7 @@ export class SlackHelpers {
           resolve(result);
         });
       } catch (exception) {
+        // eslint-disable-next-line @typescript-eslint/prefer-promise-reject-errors
         reject(exception);
       }
     });
